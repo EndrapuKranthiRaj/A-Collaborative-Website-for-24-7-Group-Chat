@@ -1,0 +1,97 @@
+{% extends 'grouplayout.html' %}
+{% block body %}
+
+
+<!--Mobile Chat-->
+<div class="box flex flex-col sm:hidden" id='datamobile'>
+
+    <div class="otherchat">
+        <p>Hi im other</p>
+    </div>
+
+    <div class="mychat">
+        <p>hi im me asdfcgvb awsdfcgvb QAWSDFVB AWSDFCVB ASDFCV</p>
+    </div> 
+
+
+    {% for chat in chats %}
+    
+    {% if  chat.username == user%}
+    
+    <div class="mychat">
+        <p>{{chat.content}}</p>
+    </div> 
+
+    {% else %}
+
+    <div class="otherchat">
+        <div class="myname">
+            <a href="/profile/{{chat.username}}"><p>{{chat.username}} :</p></a>
+        </div>
+        <p>{{chat.content}}</p>
+    </div>
+    
+    {% endif %}
+    {% endfor %}
+
+    <form class="flexmem" action="{{ url_for("group")}}" method="post">
+        <input class="typeboxm" type="text" placeholder="Message..." name="msg">
+        <button class="typesubmitm" type="submit" >send</button>
+    </form>
+
+</div>
+
+
+<!-- Desktop chat-->
+<div class="box sm:flex flex-col hidden" id='data'>
+
+    <div class="otherchat">
+        <p>Hi im other</p>
+    </div>
+
+    <div class="mychat">
+        <p>hi im me asdfcgvb awsdfcgvb QAWSDFVB AWSDFCVB ASDFCV</p>
+    </div> 
+
+
+    {% for chat in chats %}
+    
+    {% if  chat.username == user%}
+    
+    <div class="mychat">
+        <p>{{chat.content}}</p>
+    </div> 
+
+    {% else %}
+
+    <div class="otherchat">
+        <div class="myname">
+            <a href="/profile/{{chat.username}}"><p>{{chat.username}} :</p></a>
+        </div>
+        <p>{{chat.content}}</p>
+    </div>
+    
+    {% endif %}
+    {% endfor %}
+
+    <form class="flexme" action="{{ url_for("group")}}" method="post">
+        <input class="typebox" type="text" placeholder="Message..." name="msg">
+        <button class="typesubmit" type="submit" >send</button>
+    </form>
+
+</div>
+
+<br>
+<br>
+
+<footer>
+    <div class="footer w-full h-20 bg-slate-900 sm:hidden" style="font-size:0.5em">
+        <p class="text-white text-center pt-4 font-bold mb-3">Contact You</p>
+        <ul class="flex space-x-2 justify-center text-white">
+            <li class="px-2">Ph: +91 9491982643</li>
+            <li class="px-2">Email: FreeSoftwareWing@gmail.com</li>
+            <li class="px-2">Address: GRIET Nizampet</li>
+        </ul>
+    </div>
+</footer>
+{% endblock%}

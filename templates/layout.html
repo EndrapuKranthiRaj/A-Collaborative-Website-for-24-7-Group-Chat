@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>FSW</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='cssfile.css')}}">
+</head>
+<body  class=" bg-fixed">
+
+    
+
+    <nav class="flex justify-between bg-[#252120] ">
+        <!-- mobile-menu -->
+        <div class="sm:hidden ">
+            <a onclick="func(this)" href="#" class="allbars flex flex-col justify-between w-30 h-4  ml-4 m-3">
+                <span class="bar bg-white h-[0.20em] w-6 rounded-sm"></span>
+                <span class="bar bg-white h-[0.20em] w-6 rounded-sm "></span>
+                <span class="bar bg-white h-[0.20em] w-6 rounded-sm "></span>
+            </a>
+            <div name="menu" class="alllinks">
+                <ul class="mr-4 px-2 rounded-sm bg-[#252120] text-white w-30">
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-full hover:font-bold pl-2 mb-2"><a href="/home">Home</a></li>
+                    {% if logged %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-full hover:font-bold pl-2 mb-2"><a href="/group">Group</a></li>
+                    {% else %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-full hover:font-bold pl-2 mb-2"><a href="/login">Group</a></li>
+                    {% endif %}
+                    
+                    {% if logged %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-full hover:font-bold pl-2 mb-2"><a href="/news">members</a></li>
+                    {% else %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-full hover:font-bold pl-2 mb-2"><a href="/login">members</a></li>
+                    {% endif %}
+
+
+                    {% if logged %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-40 hover:font-medium pl-2 mb-2"><a href="/admins">profile</a></li>
+                    {% else %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-40 hover:font-medium pl-2 mb-2"><a href="/login">profile</a></li>
+                    {% endif %}
+
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-40 hover:font-medium pl-2 mb-2"><a href="/img2txt">img2txt</a></li>
+                    
+                    {% if logged %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-full hover:font-bold pl-2 mb-2"><a href="/logout">logout</a></li>
+                    {% else %}
+                    <li class="hover:bg-gray-600 hover:rounded-sm w-full hover:font-bold pl-2 mb-2"><a href="/login">login</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- logo -->
+        <div>
+            <h1 class=" m-1 mr-2 mt-1.5 px-2 rounded-sm text-xl font-bold bg-[#D8A349]">FSW</h1>
+        </div>
+
+        <!-- Desktop-menu -->
+        <ul class="px-2 rounded-sm bg-red-500 text-white hidden sm:flex">
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/home">Home</a></li>
+
+            {% if logged %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/group">Group</a></li>
+            {% else %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/login">Group</a></li>
+            {% endif %}
+            
+            {% if logged %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/news">members</a></li>
+            {% else %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/login">members</a></li>
+            {% endif %}
+
+            {% if logged %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/admins">profile</a></li> 
+            {% else %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/login">profile</a></li>
+            {% endif %} 
+
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/img2txt">img2txt</a></li>
+
+            {% if logged %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/logout">logout</a></li>
+            {% else %}
+            <li class="hover:bg-gray-600 hover:rounded-sm mx-2  p-2 "><a href="/login">login</a></li>
+            {% endif %}
+
+
+        </ul>
+        
+    </nav>
+
+    {% block body %}
+
+    {% endblock%}
+
+
+    <footer>
+        <div class="w-full h-28 bg-slate-900 hidden sm:block bottom-0">
+            <p class="text-white text-center pt-4 font-bold mb-3">Contact You</p>
+            <ul class="flex space-x-2 justify-center text-white">
+                <li class="px-2">Ph: +91 9491982643</li>
+                <li class="px-2">Email: FreeSoftwareWing@gmail.com</li>
+                <li class="px-2">Address: GRIET Nizampet</li>
+            </ul>
+        </div>
+    </footer>
+
+        
+
+
+
+
+    <!------------------------------------- javascript ------------------------------------------------>
+    <script src="{{url_for('static', filename='scriptfile.js')}}">
+
+        
+        
+    </script>
+    
+
+</body>
+</html>

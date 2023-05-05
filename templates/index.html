@@ -1,0 +1,71 @@
+  {% extends 'layout.html' %}
+  {% block body %}
+  <!-- mobile-home -->
+    <div class="contentinhome h-[100vh] sm:hidden mt-2">
+
+        <div class="flex-col justify-center">
+            <img src="{{url_for('static', filename='stewenanna.JPG')}}" alt="Afterhaircut-stewenanna" class="w-60 ml-auto mr-auto order-first rounded-md">
+            <div class="order-last m-auto text-center">
+                <h1 class="font-bold text-2xl mb-2">EXPLORE US</h1>
+                <p class="w-fit text-white text-left text-lg mx-2 bg-slate-700 pl-2 rounded-xl">FSW is a technical club of GRIET, supporting Free and Open Source Software tools, where students accomplish skills through the events conducted. Our aim is to encourage students to use free and open softwere tools for their programming endaevors 
+                    we believe that knowledge and productivity should not be locked behind a paywall.</p>
+            </div>
+            
+            <div class="w-90 m-4 ">
+                <h2 class="font-bold text-4xl text-center">Vision and Mission</h2>
+                <p class="text-xl mt-2 bg-white rounded-xl p-4 mr-0.5">Our vision with this website is to connect club members in order to cultivate a community of collabaration , we want this website to act as a hub for developers to interact and connect with each other in order to eventually work on projects together.</p>
+            </div>
+            <div class="w-90 m-4 ">
+                <h2 class="font-bold text-4xl text-center">Who are we?</h2>
+                <p class="text-xl mt-2 bg-white rounded-xl p-4 mr-0.5">FSW is a technical club of GRIET, supporting Free and Open Source Software tools, where students accomplish skills through the events conducted. Our aim is to encourage students to use free and open softwere tools for their programming endaevors 
+                    we believe that knowledge and productivity should not be locked behind a paywall.</p>
+            </div>
+            <div class="w-90 m-4 ">
+                <h2 class="font-bold text-4xl text-center">What do we offer?</h2>
+                <p class="text-xl mt-2 bg-white rounded-xl p-4 mr-0.5">We offer a 24/7 group chat for club memebers to participate in discussions and collaborations with each other. a members list is available to enable discovery of individual users profiles , the profile contain their contact information.</p>
+            </div>
+
+                <div class="w-full h-20 bg-slate-900 sm:hidden" style="font-size:0.5em">
+                    <p class="text-white text-center pt-4 font-bold mb-3">Contact You</p>
+                    <ul class="flex space-x-2 justify-center text-white">
+                        <li class="px-2">Ph: +91 9491982643</li>
+                        <li class="px-2">Email: FreeSoftwareWing@gmail.com</li>
+                        <li class="px-2">Address: GRIET Nizampet</li>
+                    </ul>
+                </div>     
+
+        </div>
+
+    </div>
+    <!-- desktop-home -->
+    <div class="contentinhome hidden sm:block">
+        
+        <div class="relative ">
+            <img src="{{url_for('static', filename='vivitsu.JPG')}}" alt="Afterhaircut-stewenanna" class="h-[25em] absolute top-0 right-0">
+            <div class="order-4 pl-4 absolute top-0 left-0 bgcolor2 w-[75%] h-[25em] pt-10">
+                <h1 class="font-bold text-4xl text-[#21ACDF] mb-2">EXPLORE US</h1>
+                <p class="w-[65%]  text-xl text-white ">FSW is a technical club of GRIET, supporting Free and Open Source Software tools, where students accomplish skills through the events conducted. Our aim is to encourage students to use free and open softwere tools for their programming endaevors 
+                    we believe that knowledge and productivity should not be locked behind a paywall.
+                    </p>
+            </div>
+        </div>
+        
+    </div>
+    <div class="mt-[30em] mb-10 hidden sm:flex justify-between">
+        <div class="w-96 m-4 ">
+            <h2 class="font-bold text-4xl text-center">Vision and Mission</h2>
+            <p class="text-xl mt-2 bg-white rounded-xl p-4 h-[56vh]">Our vision with this website is to connect club members in order to cultivate a community of collabaration , we want this website to act as a hub for developers to interact and connect with each other in order to eventually work on projects together.</p>
+        </div>
+        <div class="w-96 m-4">
+            <h2 class="font-bold text-4xl text-center">Who are we?</h2>
+            <p class="text-xl mt-2 bg-white rounded-xl p-4 h-[56vh]">FSW is a technical club of GRIET, supporting Free and Open Source Software tools, where students accomplish skills through the events conducted. Our aim is to encourage students to use free and open softwere tools for their programming endaevors 
+                we believe that knowledge and productivity should not be locked behind a paywall.
+                </p>
+        </div>
+        <div class="w-96 m-4">
+            <h2 class="font-bold text-4xl text-center">What do we offer?</h2>
+            <p class="text-xl mt-2 bg-white rounded-xl p-4 h-[56vh]">We offer a 24/7 group chat for club memebers to participate in discussions and collaborations with each other. a members list is available to enable discovery of individual users profiles , the profile contain their contact information.</p>
+        </div>
+    </div>
+<br>
+{% endblock%}

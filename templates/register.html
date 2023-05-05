@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<!-- Mobile register-->
+<div class="loginboxmobile sm:hidden">
+    <h1 class='h1'>Register</h1>
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+        <label class="label1">Username</label>
+        <br>
+        {{form.username}}
+        <br>
+        <label class="label1" >email</label>
+        <br>
+        {{form.email}}
+        <br>
+        <label class="label1" >Password</label>
+        <br>
+        {{form.password}}
+        <br>
+        {{form.submit}}
+        <br>
+
+        <label class="label1" style="font-size:0.7em" ><a href="/login">Don't have an account login</a></label>
+    </form>
+</div>
+
+
+<!-- Desktop register-->
+<div class="loginbox hidden sm:block">
+    <h1 class='h1'>Register</h1>
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+        <label class="label1">Username</label>
+        <br>
+        {{form.username}}
+        <br>
+        <label class="label1" >email</label>
+        <br>
+        {{form.email}}
+        <br>
+        <label class="label1" >Password</label>
+        <br>
+        {{form.password}}
+        <br>
+        {{form.submit}}
+        <br>
+
+        <label class="label1" ><a href="/login">Don't have an account login</a></label>
+    </form>
+</div>
+
+<footer>
+    <div class="footer w-full h-20 bg-slate-900 sm:hidden" style="font-size:0.5em">
+        <p class="text-white text-center pt-4 font-bold mb-3">Contact You</p>
+        <ul class="flex space-x-2 justify-center text-white">
+            <li class="px-2">Ph: +91 9491982643</li>
+            <li class="px-2">Email: FreeSoftwareWing@gmail.com</li>
+            <li class="px-2">Address: GRIET Nizampet</li>
+        </ul>
+    </div>
+</footer>
+
+
+{% endblock%}

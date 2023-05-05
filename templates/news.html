@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<table id="customers">
+    <tr>
+      <th>Sno</th>
+      <th>Id's</th>
+    </tr>
+    {% for  user in users %}
+    <tr class= "showcursor" onclick="document.location = '/profile/{{user.username}}';">
+        <td> <a class="h1"> {{loop.index}}</td>
+        <td> <a  class="h1">{{user.username}}</td>
+    </tr>
+    {% endfor %}   
+</table>
+
+<footer>
+    <div class="footer w-full h-20 bg-slate-900 sm:hidden" style="font-size:0.5em">
+        <p class="text-white text-center pt-4 font-bold mb-3">Contact us</p>
+        <ul class="flex space-x-2 justify-center text-white">
+            <li class="px-2">Ph: +91 9491982643</li>
+            <li class="px-2">Email: FreeSoftwareWing@gmail.com</li>
+            <li class="px-2">Address: GRIET Nizampet</li>
+        </ul>
+    </div>
+</footer>
+{% endblock%}

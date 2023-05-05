@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+<div class="card">
+
+    <img src="{{url_for('static', filename='noprofile.JPG')}}" alt="John" style="width:100% ; border-radius: 10% 10% 0% 0%;">
+    <h1 class="h1" style=" background-color: #22242D ; color: white ;" >{{user1.username}}</h1>
+    <h1 class="h1" style=" background-color: #22242D ; color: white ;" >{{user1.email}}</h1>
+    <p style=" background-color: #22242D ; color: white ;" >Gokaraju Rangaraju Institute of Engineering and Technology</p>
+    <p class="title" style="font-size: 25px; font-weight: bold; ">BIO</p>
+    <p class="title">{{user1.bio}}</p>
+
+</div>
+<br>
+<div class="card2">
+    <form action="{{ url_for("admins")}}" method="post">
+        {% if user1.username == realme %}
+        <input type="text" name="newbio" placeholder="Change bio...">
+        <input type="submit" value="Submit">
+        {% endif %}
+    </form>
+</div>
+
+<br>
+<br>
+
+<footer>
+    <div class="footer w-full h-20 bg-slate-900 sm:hidden" style="font-size:0.5em">
+        <p class="text-white text-center pt-4 font-bold mb-3">Contact You</p>
+        <ul class="flex space-x-2 justify-center text-white">
+            <li class="px-2">Ph: +91 9491982643</li>
+            <li class="px-2">Email: FreeSoftwareWing@gmail.com</li>
+            <li class="px-2">Address: GRIET Nizampet</li>
+        </ul>
+    </div>
+</footer>
+    {% endblock%}
