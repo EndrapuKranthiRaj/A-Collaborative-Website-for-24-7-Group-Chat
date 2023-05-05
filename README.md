@@ -7,7 +7,8 @@ Hosted using Pythonanywehre
 Frontend:
 1. HTML
 2. CSS
-3. JS
+3. Tailwind CSS
+4. JS
 
 Backend:
 1. Flask
